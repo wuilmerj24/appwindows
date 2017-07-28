@@ -1,0 +1,23 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Arca Continental</ion-title>
+    <ion-buttons end (click)="cerrarSesion()">
+      <button ion-button icon-only>
+        <ion-icon ios="ios-more" md="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-searchbar (ionInput)="getItems($event)" value="" [(ngModel)]="infoItem"  placeholder="Buscar"  style="width: 100%;height: 5vh !important;" required>
+      </ion-searchbar>
+    </ion-item>
+    <ion-item *ngFor="let item of items" (click)="pasarItem(item)" >
+      <h2>{{ item.nombre }}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
